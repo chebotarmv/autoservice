@@ -1,0 +1,12 @@
+<div>
+    <h1><a href="/">Автосервис</a></h1>
+</div>
+
+{% for master in masters %}
+    <div>
+        <h2>{{ master.name }}</h2>
+        <h2>{{ master.specialization }}</h2>
+        <h2>{{ master.info|linebreaksbr }}</h2>
+        <h2><a href="{% url 'create_record' pk=master.pk %}">Записаться на ремонт</a></h2>
+    </div>
+{% endfor %}

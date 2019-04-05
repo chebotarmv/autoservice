@@ -5,7 +5,6 @@ from . validators import validate_weekday
 
 
 class Master (models.Model):
-    id = models.IntegerField(primary_key=True)
     name = models.CharField(verbose_name='ФИО', max_length = 300) 
     specialization = models.CharField(verbose_name='Специализация', max_length=300)
     info = models.CharField(verbose_name='Инфо о мастере', max_length=10000)
@@ -19,7 +18,6 @@ class Master (models.Model):
 
 
 class Record (models.Model):
-    id = models.IntegerField(primary_key=True)
     date = models.DateField(verbose_name='Дата записи ', validators = [validate_weekday])
     time = models.TimeField(verbose_name='Время записи ')
     client_name = models.CharField(verbose_name='ФИО ', max_length=300)
